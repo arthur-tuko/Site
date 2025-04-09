@@ -1,5 +1,50 @@
+/*
+#404b62  cinza escuro
+#4d3f72 azul escuro
+#dfe0e5 branco
+#cccccc cinza claro
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+
+
+}
 body{
 
   background-color: aqua;
     
 }
+
+
+header{
+    background-color: #404b62;
+    color: #cccccc;
+    padding: 15px 15px 15px 15px;
+    width: 100%;
+    top: 0;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav ul li{
+
+    margin-left: 20px;
+}
+
+nav ul li a{
+
+    color: #cccccc;
+    text-decoration: none;
+
+}
+
+
