@@ -17,6 +17,10 @@ body{
 background-color: #ec6231;
 
 }
+section{
+    scroll-margin-top: 180px;
+
+}
 
 header{
     background-color: #ffff;
@@ -76,6 +80,10 @@ header .container{
 .Logo{
     font-size: 2em;
     font-weight: bold;
+}
+.img2{
+    width: 70%;
+
 }
 
 @media (max-width: 675px){
