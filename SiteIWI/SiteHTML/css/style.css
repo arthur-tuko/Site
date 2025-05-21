@@ -48,7 +48,7 @@ nav ul li a{
     color: firebrick;
     text-decoration: none;
 }
-a:hover{
+nav a:hover{
 background-color: black;
 
 }
@@ -235,5 +235,69 @@ header .container{
     object-fit: cover;
 
 
+}
+.modal{
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    text-align: center;
+}
+.cardal{
+    max-width: 300px;
+}
+
+.cardal h3{
+    margin-top: 0;
+}
+
+.bnt{
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+a:hover{
+    background-color: cyan;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.modal:target{
+    display: flex;
+}
+
+.modal-content{
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.close-bnt{
+    margin-top: 20px;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: red;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
 }
 
