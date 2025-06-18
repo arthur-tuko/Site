@@ -93,7 +93,7 @@ header .container{
 }
 
 #criador .item {
-    background-color: white; 
+    background-color: black; 
     border: 1px solid black; 
     border-radius: 10px; 
     padding: 20px; 
@@ -115,7 +115,7 @@ header .container{
 #criador .item p {
     margin-top: 15px;
     font-size: 1em;
-    color: #4d3f72;
+    color: red;
 }
 
 #criador .imagem img {
@@ -143,6 +143,8 @@ header .container{
         width: 70vh;
         height: 50vh;
     }
+    
+    
 }
 .banner{
     margin-top: 70px;
@@ -157,13 +159,13 @@ header .container{
 #criador{
     padding: 35px;
     color: black;
-    background-color: #ec6231;
+    background-color: #ffff;
 }
 
 #empregos{
     padding: 35px;
     color: black;
-    background-color: #ec6231;
+    background-color: #ffff;
 
 
 }
@@ -171,7 +173,7 @@ header .container{
 #contato{
     padding: 50px;
     color: black;
-    background-color: #ec6231;
+    background-color: #ffff;
 
 
 
@@ -216,6 +218,33 @@ header .container{
     z-index: 1000;
 
 }
+.empregos-container{
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    max-width: 1400px;
+    margin: auto;
+}
+.empregos-texto{
+    flex: 1;
+    padding: 20px;
+}
+.empregos-texto p{
+    font-size: 1.4em;
+    line-height: 1.6;
+    text-align: justify;
+    margin-top: 10px;
+    padding: 15px 15px 15px 15px;
+    z-index: 1000;
+}
+.empregos-texto h1{
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+.empregos-texto h2{
+    margin-top: 15px;
+    font-size: 1.5em;
+}
 
 .hex-grid{
     display: flex;
@@ -227,8 +256,8 @@ header .container{
 }
 
 .hex{
-    width: 200px;
-    height: 1000px;
+    width: 150px;
+    height: 150px;
     clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
     overflow: hidden;
     position: relative;
