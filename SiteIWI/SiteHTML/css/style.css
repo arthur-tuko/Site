@@ -12,11 +12,9 @@
 
 }
 
-body{
 
-background-color: #ec6231;
 
-}
+
 section{
     scroll-margin-top: 180px;
 
@@ -65,7 +63,7 @@ background-color: black;
     align-items: flex-start;
     justify-content: center;
     padding-left: 30px;
-    font-size: 2em;
+    font-size: 1.6em;
     text-align: left;
     text-shadow: 2px 2px 5px red;
 
@@ -135,6 +133,15 @@ header .container{
     nav ul{
         margin-top: 10px;
         flex-direction: column;
+    
+    }
+    .modal-content{
+        width: 70vh;
+        height: 50vh;
+    }
+    .banner{
+        width: 70vh;
+        height: 50vh;
     }
 }
 .banner{
@@ -187,14 +194,14 @@ header .container{
 }
 
 .sobre-texto h1{
-    font-size: 3em;
+    font-size: 2.5em;
     margin-bottom: 20px;
 
 }
 
 .sobre-texto h2{
     margin-top: 15px;
-    font-size: 2em;
+    font-size: 1.5em;
 
 
 
@@ -221,7 +228,7 @@ header .container{
 
 .hex{
     width: 200px;
-    height: 180px;
+    height: 1000px;
     clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
     overflow: hidden;
     position: relative;
