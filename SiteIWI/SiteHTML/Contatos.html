@@ -38,23 +38,52 @@
                 <h1 class="centraliza">Contato</h1>
                 <form action="https://formsubmit.co/arthurfranco502@gmail.com" method="POST">
                     <div class="grupo-form">
-                        <label for="nome">Nome completo:</label>
+                        <label for="nome">Nome completo:</label><br>
                         <input type="text" id="nome" name="nome" required>
                     </div> 
-                    
+
                     <div class="grupo-form">
-                        <label for="email">E-mail:</label>
+                        <label for="email">E-mail:</label><br>
                         <input type="email" id="email" name="email" required>
                       </div>
                 
                       <div class="grupo-form">
-                        <label for="idade">Idade:</label>
+                        <label for="idade">Idade:</label><br>
                         <input type="number" id="idade" name="idade" min="10" max="120">
                       </div>
                 
                       <div class="grupo-form">
-                        <label for="data">Data da consulta:</label>
+                        <label for="data">Data:</label><br>
                         <input type="date" id="data" name="data">
+                      </div>
+
+                      <div class="grupo-form">
+                        <label>Grau de interesse na área de informatica:</label><br>
+                        <input class="linhazinha" type="range" min="0" max="100" name="interesse">
+                      </div>
+
+                      <div class="grupo-form">
+                        <label for="linguagem">Qual linguagem de programação você usa?</label><br>
+                        <select id="area" name="linguagem">
+                            <option value="py">Python</option>
+                            <option value="js">JavaScript</option>
+                            <option value="java">Java</option>
+                            <option value="c++">C++</option>
+                            <option value="php">PHP</option>
+                        </select>
+                      </div>
+
+                      <div class="grupo-form">
+                        <label>Essas informações foram uteis?</label><br>
+                        <input type="radio" id="avaliação" name="opção" value="SIM">
+                        <label for="sim">Sim</label><br>
+                        <input type="radio" id="avaliação2" name="opção" value="NÃO">
+                        <label for="não">Não</label><br>
+                      </div>
+
+                      <div class="grupo-form">
+                        <label for="mensagem">Mensagem:</label><br>
+                        <textarea id="mensagem" name="mensagem" rows="10"></textarea>
                       </div>
                </form>
              </div>
