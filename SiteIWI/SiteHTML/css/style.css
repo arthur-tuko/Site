@@ -84,7 +84,7 @@ header .container{
     width: 70%;
 
 }
-#criador .container {
+#curiosidades .container {
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
     gap: 20px; 
@@ -92,7 +92,7 @@ header .container{
     padding: 50px 0; 
 }
 
-#criador .item {
+#curiosidades .item {
     background-color: black; 
     border: 1px solid black; 
     border-radius: 10px; 
@@ -102,23 +102,23 @@ header .container{
     cursor: pointer; 
 }
 
-#criador .item:hover {
+#curiosidades .item:hover {
     transform: translateY(-5px); 
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
 }
 
-#criador .item:active {
+#curiosidades .item:active {
     transform: scale(0.98); 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); 
 }
 
-#criador .item p {
+#curiosidades .item p {
     margin-top: 15px;
     font-size: 1em;
     color: red;
 }
 
-#criador .imagem img {
+#curiosidades .imagem img {
     width: 100%; 
     max-width: 150px; 
     height: auto; 
@@ -191,10 +191,11 @@ header .container{
     color: black;
 }
 
-#Curiosidades{
+#curiosidades{
     padding: 35px;
     color: black;
     background-color: #ffff;
+    margin: auto;
 }
 
 #empregos{
