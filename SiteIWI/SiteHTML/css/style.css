@@ -12,7 +12,9 @@
 
 }
 
-
+.Logo{
+    width: 35%;
+}
 
 
 section{
@@ -67,6 +69,19 @@ background-color: black;
     text-align: left;
     text-shadow: 2px 2px 5px red;
 
+}
+
+.bannercontato{
+    background:url(../img/contato.png) no-repeat center/cover;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 90px;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 30px; 
+    font-size: 1.6em;
+    text-align:left;
 }
 
 header .container{
@@ -154,6 +169,7 @@ header .container{
     margin: auto;
     margin-top: 40px;
     color: firebrick;
+    text-align: left;
 }
 
 .grupo-form {
@@ -161,6 +177,7 @@ header .container{
     flex-direction: column;
     margin-bottom: 20px;
     font-size: 1.2em;
+    text-align: left;
 }
 
 .grupo-form input,
@@ -171,6 +188,7 @@ header .container{
     border-radius: 6px;
     font-size: 1em;
     margin-top: 8px;
+    text-align: left;
 }
 
 .grupo-form input[type="checkbox"],
@@ -205,6 +223,10 @@ body.paginamensagem {
   }
 
 @media (max-width: 675px){
+    .Logo{
+        width: 45%;
+    }
+
     header .container, .sobre-container{
         flex-direction: column;
         text-align: center;
@@ -214,11 +236,15 @@ body.paginamensagem {
         flex-direction: column;
     
     }
+    .sobre-texto{
+        flex-direction: column;
+    }
     .modal-content{
         max-height: 50vh;
         align-items: center;
     }
     .banner{
+        flex-direction: column;
         width: 70vh;
         height: 50vh;
     }
@@ -238,6 +264,12 @@ body.paginamensagem {
         margin-right: 15px;
         width: 100%;
     }
+    .formulario-contato {
+        padding: 20px;
+      }
+      .galeria{
+        flex-direction: column;
+      }
        
     }
 
@@ -382,9 +414,6 @@ body.paginamensagem {
     text-decoration: none;
     border-radius: 6px;
     cursor: pointer;
-}
-a:hover{
-    background-color: cyan;
 }
 
 .modal {
