@@ -36,10 +36,14 @@
         <section id="contato">
             <div class="container">
                 <h1 class="centraliza">Contato</h1>
-                <form action="https://formsubmit.co/arthurfranco502@gmail.com" method="POST">
+                <form class="formulariocontato" action="https://formsubmit.co/arthurfranco502@gmail.com" method="POST">
                     <div class="grupo-form">
-                        <label for="nome">Nome completo:</label><br>
+                        <label for="nome">Nome:</label><br>
                         <input type="text" id="nome" name="nome" required>
+                    </div> 
+                    <div class="grupo-form">
+                        <label for="nome">Como prefere ser chamado:</label><br>
+                        <input type="text" id="apelido" name="apelido" required>
                     </div> 
 
                     <div class="grupo-form">
@@ -99,6 +103,11 @@
                         <label for="mensagem">Mensagem:</label><br>
                         <textarea id="mensagem" name="mensagem" rows="10"></textarea>
                       </div>
+
+                      <div class="grupo-form centraliza">
+                      <button type="submit" class="bnt">Enviar</button>
+                      <input type="hidden" name="_captcha" value="false"> 
+                      <input type="hidden" name="_next" value="">
                </form>
              </div>
            
