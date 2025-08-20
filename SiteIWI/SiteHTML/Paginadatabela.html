@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/imagem html.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+     
+</head>
+<style>
+    .tabela-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 50px 0;
+}
+
+.tabela-container table {
+  min-width: 600px;
+}
+
+.tabela-html {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 1rem;
+  background-color: rgba(255, 111, 0, 0.6);
+  color: firebrick;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tabela-html th, 
+.tabela-html td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid rgba(233, 38, 34, 0.614);
+}
+
+.tabela-html thead {
+  background: linear-gradient(90deg, orange, red);
+  color: #000;
+  font-weight: bold;
+}
+
+.tabela-html tbody tr:hover {
+  background-color: rgba(255, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.tabela-html tbody tr:last-child td {
+  border-bottom: none;
+}
+</style>
+<body>
+    <header>
+        <div class="container">
+            <div class="Logo">
+                <a href="index.html"><img class="Logo" src="img/Other-html-5-icon.png" alt="Logo html"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html">O que é Html</a></li>
+                    <li><a href="index.html">Curiosidades</a></li>
+                    <li><a href="index.html">Empregos</a></li>
+                    <li><a href="Contatos.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="Inicio" class="bannertabela">
+    </section>
+    <main>
+        <section id="contato">
+            <div class="container">
+                <h1 class="centraliza">Algumas Estrutura de elementos, tags específicas, semântica, etc.</h1>
+                <br>
+                <p>Alguns exemplos de programaçãoem html para começar a aprender</p>
+                <div class="tabela-container">
+                    <table class="tabela-html">
+                        <thead>
+                            <tr>
+                                <th>Tag</th>
+                                <th>Descrição</th>
+                                <th>Atributos Comuns</th>
+                                <th>Exemplo de Uso</th>
+                                <th>Categoria Semântica</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>&lt;h1&gt;</td>
+                                <td>Título de nível 1</td>
+                                <td>id, class</td>
+                                <td>&lt;h1&gt;Bem-vindo&lt;/h1&gt;</td>
+                                <td>Conteúdo</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;a&gt;</td>
+                                <td>Link para outra página ou seção</td>
+                                <td>href, target, title</td>
+                                <td>&lt;a href="https://exemplo.com"&gt;Visite&lt;/a&gt;</td>
+                                <td>Interativo</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;img&gt;</td>
+                                <td>Imagem incorporada</td>
+                                <td>src, alt, width, height</td>
+                                <td>&lt;img src="foto.jpg" alt="Foto"&gt;</td>
+                                <td>Embutido</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;div&gt;</td>
+                                <td>Contêiner genérico para agrupar conteúdo</td>
+                                <td>id, class, style</td>
+                                <td>&lt;div class="caixa"&gt;...&lt;/div&gt;</td>
+                                <td>Não semântico / estrutural</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;form&gt;</td>
+                                <td>Define um formulário para envio de dados</td>
+                                <td>action, method</td>
+                                <td>&lt;form action="/envia" method="post"&gt;...&lt;/form&gt;</td>
+                                <td>Interativo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

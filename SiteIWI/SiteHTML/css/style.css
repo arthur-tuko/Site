@@ -13,7 +13,12 @@
 }
 
 .Logo{
-    width: 35%;
+    width: 33.6%;
+    padding: 10px;
+}
+.imagemlogo{
+    padding: 0px;
+    width: 27.8%;
 }
 
 
@@ -25,7 +30,7 @@ section{
 header{
     background-color: #ffff;
     color: firebrick;
-    padding: 15px 15px 15px 15px;
+    padding: 0px;
     width: 100%;
     top: 0;
     position: fixed;
@@ -161,7 +166,7 @@ header .container{
 }
 
 .formulariocontato {
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
