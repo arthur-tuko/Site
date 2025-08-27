@@ -7,33 +7,23 @@
   <link rel="shortcut icon" href="img/imagem html.png" type="image/x-icon" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
-    rel="stylesheet"
-  />
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet"/>
   <style>
-    /* Reset básico */
     body, html {
       height: 100%;
       margin: 0;
-      background-color: #222; /* fundo da página */
       font-family: Arial, sans-serif;
     }
-
-    header {
-      /* mantém padrão do seu header */
-    }
-
-    main.mainjogo {
-      width: 800px; /* largura maior */
-      height: 600px; /* altura fixa */
-      background-color: #1e1e1e; /* fundo do jogo */
+    .mainjogo {
+      width: 800px;
+      height: 600px;
+      background-color: #1e1e1e;
       position: relative;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
       border-radius: 10px;
       overflow: hidden;
-
-      margin: 80px auto 0; /* distancia do topo e centraliza horizontalmente */
+      margin: 100px auto 0;
     }
 
     #gameArea {
@@ -52,7 +42,7 @@
       user-select: none;
     }
 
-    #player, #target {
+    #player, #target, #enemy {
       position: absolute;
       width: 60px;
       height: 60px;
@@ -72,20 +62,67 @@
       top: 300px;
       left: 300px;
     }
+
+    #enemy {
+      color: red;
+      top: 500px;
+      left: 500px;
+    }
+
+    .Logojogo {
+      width: 10%;
+      padding: 10px;
+    }
+
+    .imagemlogo {
+      padding: 0px;
+      width: 27.8%;
+    }
+
+    /* Tela de fim de jogo */
+    #gameOverScreen {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 32px;
+      display: none;
+      z-index: 100;
+    }
+
+    #gameOverScreen button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 20px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      background-color: #f44336;
+      color: white;
+    }
+
+    #gameOverScreen button:hover {
+      background-color: #d32f2f;
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="container">
-      <div class="Logo">
-        <a href="index.html"><img class="Logo" src="img/Other-html-5-icon.png" alt="Logo html"></a>
+      <div class="Logojogo">
+        <a href="index.html"><img class="Logojogo" src="img/Other-html-5-icon.png" alt="Logohtml"></a>
       </div>
       <nav>
         <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="index.html">O que é Html</a></li>
-          <li><a href="index.html">Curiosidades</a></li>
-          <li><a href="index.html">Empregos</a></li>
+          <li><a href="index.html#Inicio">Início</a></li>
+          <li><a href="index.html#sobre">O que é Html</a></li>
+          <li><a href="index.html#curiosidades">Curiosidades</a></li>
+          <li><a href="index.html#empregos">Empregos</a></li>
           <li><a href="jogo.html">Jogo</a></li>
           <li><a href="Contatos.html">Contato</a></li>
         </ul>
@@ -98,18 +135,27 @@
   <main class="mainjogo">
     <div id="gameArea">
       <div id="score">Pontuação: 0</div>
-      <div id="player">🌐</div> <!-- Representa o HTML -->
-      <div id="target">💻</div> <!-- Será trocado por linguagens -->
+      <div id="player">🌐</div>
+      <div id="target">💻</div>
+      <div id="enemy">🚫</div>
+
+      <!-- Tela de Game Over -->
+      <div id="gameOverScreen">
+        <div>💀 Você foi pego!</div>
+        <button onclick="resetGame()">Recomeçar Jogo</button>
+      </div>
     </div>
   </main>
 
   <script>
     const player = document.getElementById("player");
     const target = document.getElementById("target");
+    const enemy = document.getElementById("enemy");
     const scoreDisplay = document.getElementById("score");
-    const step = 15;
     const area = document.getElementById("gameArea");
+    const gameOverScreen = document.getElementById("gameOverScreen");
 
+    const step = 15;
     const languages = ["💻", "📜", "🐍", "☕", "🔧", "🧠"];
     const languageNames = {
       "💻": "JavaScript",
@@ -121,20 +167,21 @@
     };
 
     let score = 0;
+    let gameRunning = true;
 
     document.addEventListener("keydown", function (e) {
+      if (!gameRunning) return;
+
+      const keys = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
+      if (keys.includes(e.key)) e.preventDefault();
+
       let top = player.offsetTop;
       let left = player.offsetLeft;
 
       if (e.key === "ArrowUp" && top > 0) top -= step;
-      if (e.key === "ArrowDown" && top + player.offsetHeight < area.offsetHeight)
-        top += step;
+      if (e.key === "ArrowDown" && top + player.offsetHeight < area.offsetHeight) top += step;
       if (e.key === "ArrowLeft" && left > 0) left -= step;
-      if (
-        e.key === "ArrowRight" &&
-        left + player.offsetWidth < area.offsetWidth
-      )
-        left += step;
+      if (e.key === "ArrowRight" && left + player.offsetWidth < area.offsetWidth) left += step;
 
       player.style.top = top + "px";
       player.style.left = left + "px";
@@ -145,6 +192,7 @@
     function checkCollision() {
       const playerRect = player.getBoundingClientRect();
       const targetRect = target.getBoundingClientRect();
+      const enemyRect = enemy.getBoundingClientRect();
 
       if (
         playerRect.left < targetRect.right &&
@@ -155,6 +203,15 @@
         score++;
         scoreDisplay.textContent = "Pontuação: " + score;
         moveTargetRandom();
+      }
+
+      if (
+        playerRect.left < enemyRect.right &&
+        playerRect.right > enemyRect.left &&
+        playerRect.top < enemyRect.bottom &&
+        playerRect.bottom > enemyRect.top
+      ) {
+        endGame();
       }
     }
 
@@ -167,11 +224,58 @@
 
       const randomIndex = Math.floor(Math.random() * languages.length);
       target.textContent = languages[randomIndex];
-
       target.title = languageNames[target.textContent];
       target.style.left = newX + "px";
       target.style.top = newY + "px";
     }
+
+    function moveEnemyTowardPlayer() {
+      if (!gameRunning) return;
+
+      const enemyX = enemy.offsetLeft;
+      const enemyY = enemy.offsetTop;
+      const playerX = player.offsetLeft;
+      const playerY = player.offsetTop;
+
+      const dx = playerX - enemyX;
+      const dy = playerY - enemyY;
+
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      const speed = 2 + score * 0.2;
+
+      if (distance > 0) {
+        const moveX = (dx / distance) * speed;
+        const moveY = (dy / distance) * speed;
+
+        enemy.style.left = enemyX + moveX + "px";
+        enemy.style.top = enemyY + moveY + "px";
+      }
+
+      checkCollision();
+      requestAnimationFrame(moveEnemyTowardPlayer);
+    }
+
+    function endGame() {
+      gameRunning = false;
+      gameOverScreen.style.display = "flex";
+    }
+
+    function resetGame() {
+      score = 0;
+      gameRunning = true;
+      gameOverScreen.style.display = "none";
+      scoreDisplay.textContent = "Pontuação: 0";
+      player.style.top = "100px";
+      player.style.left = "100px";
+      enemy.style.top = "500px";
+      enemy.style.left = "500px";
+      moveTargetRandom();
+      requestAnimationFrame(moveEnemyTowardPlayer);
+    }
+
+    // Iniciar
+    moveTargetRandom();
+    moveEnemyTowardPlayer();
   </script>
 </body>
 </html>
