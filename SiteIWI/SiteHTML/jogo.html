@@ -1,167 +1,179 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Html</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="img/imagem html.png" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-     
+    <link rel="shortcut icon" href="img/imagem html.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Reset básico */
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center; /* centraliza horizontal */
+        align-items: flex-start; /* alinha no topo */
+        background-color: #222; /* fundo da página */
+        font-family: Arial, sans-serif;
+        padding-top: 150px; /* espaçamento para jogar pra baixo */
+      }
+
+      main {
+        width: 800px; /* largura maior */
+        height: 600px; /* altura fixa */
+        background-color: #1e1e1e; /* fundo do jogo */
+        position: relative;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      #gameArea {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+
+      #score {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: white;
+        font-size: 20px;
+        z-index: 10;
+        user-select: none;
+      }
+
+      #player,
+      #target {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        font-size: 50px;
+        text-align: center;
+        line-height: 60px;
+        user-select: none;
+        cursor: default;
+      }
+
+      #player {
+        top: 100px;
+        left: 100px;
+      }
+
+      #target {
+        top: 300px;
+        left: 300px;
+      }
+    </style>
 </head>
-<style>
-    /* Reset básico */
-    body, html {
-      height: 1%;
-      margin: 0;
-      display: flex;
-      justify-content: center; /* centraliza horizontal */
-      align-items: center;     /* centraliza vertical */
-      background-color: #222;  /* fundo da página */
-      font-family: Arial, sans-serif;
-    }
-
-    main {
-      width: 600px;
-      height: 400px;
-      background-color: #1e1e1e; /* fundo do jogo */
-      position: relative;
-      box-shadow: 0 0 15px rgba(0,0,0,0.8);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    #gameArea {
-      width: 100%;
-      height: 100%;
-      position: relative;
-    }
-
-    #score {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      color: white;
-      font-size: 20px;
-      z-index: 10;
-      user-select: none;
-    }
-
-    #player, #target {
-      position: absolute;
-      width: 60px;
-      height: 60px;
-      font-size: 50px;
-      text-align: center;
-      line-height: 60px;
-      user-select: none;
-      cursor: default;
-    }
-
-    #player {
-      top: 100px;
-      left: 100px;
-    }
-
-    #target {
-      top: 300px;
-      left: 300px;
-    }
-
-</style>
 <body>
-    <header>
-        <div class="container">
-            <div class="Logo">
-                <a href="index.html"><img class="Logo" src="img/Other-html-5-icon.png" alt="Logo html"></a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="index.html">O que é Html</a></li>
-                    <li><a href="index.html">Curiosidades</a></li>
-                    <li><a href="index.html">Empregos</a></li>
-                    <li><a href="jogo.html">Jogo</a></li>
-                    <li><a href="Contatos.html">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <section id="Inicio" class="bannerjogo">
-    </section>
-    <main class="mainjogo">
-        <div id="gameArea">
-            <div id="score">Pontuação: 0</div>
-            <div id="player">🌐</div> <!-- Representa o HTML -->
-            <div id="target">💻</div> <!-- Será trocado por linguagens -->
-          </div>
-    </main>
-    <script>
-        const player = document.getElementById("player");
-        const target = document.getElementById("target");
-        const scoreDisplay = document.getElementById("score");
-        const step = 15;
-        const area = document.getElementById("gameArea");
-    
-        const languages = ["💻", "📜", "🐍", "☕", "🔧", "🧠"];
-        const languageNames = {
-          "💻": "JavaScript",
-          "📜": "TypeScript",
-          "🐍": "Python",
-          "☕": "Java",
-          "🔧": "C++",
-          "🧠": "AI/ML"
-        };
-    
-        let score = 0;
-    
-        document.addEventListener("keydown", function(e) {
-          let top = player.offsetTop;
-          let left = player.offsetLeft;
-    
-          if (e.key === "ArrowUp" && top > 0) top -= step;
-          if (e.key === "ArrowDown" && top + player.offsetHeight < area.offsetHeight) top += step;
-          if (e.key === "ArrowLeft" && left > 0) left -= step;
-          if (e.key === "ArrowRight" && left + player.offsetWidth < area.offsetWidth) left += step;
-    
-          player.style.top = top + "px";
-          player.style.left = left + "px";
-    
-          checkCollision();
-        });
-    
-        function checkCollision() {
-          const playerRect = player.getBoundingClientRect();
-          const targetRect = target.getBoundingClientRect();
-    
-          if (
-            playerRect.left < targetRect.right &&
-            playerRect.right > targetRect.left &&
-            playerRect.top < targetRect.bottom &&
-            playerRect.bottom > targetRect.top
-          ) {
-            score++;
-            scoreDisplay.textContent = "Pontuação: " + score;
-            moveTargetRandom();
-          }
-        }
-    
-        function moveTargetRandom() {
-          const maxX = area.offsetWidth - target.offsetWidth;
-          const maxY = area.offsetHeight - target.offsetHeight;
-    
-          const newX = Math.floor(Math.random() * maxX);
-          const newY = Math.floor(Math.random() * maxY);
-    
-          const randomIndex = Math.floor(Math.random() * languages.length);
-          target.textContent = languages[randomIndex];
-    
-          target.title = languageNames[target.textContent];
-          target.style.left = newX + "px";
-          target.style.top = newY + "px";
-        }
-      </script>
+  <header>
+    <div class="container">
+      <div class="Logo">
+        <a href="index.html"
+          ><img
+            class="Logo"
+            src="img/Other-html-5-icon.png"
+            alt="Logo html"
+        /></a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="index.html">O que é Html</a></li>
+          <li><a href="index.html">Curiosidades</a></li>
+          <li><a href="index.html">Empregos</a></li>
+          <li><a href="jogo.html">Jogo</a></li>
+          <li><a href="Contatos.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section id="Inicio" class="bannerjogo"></section>
+  <main class="mainjogo">
+    <div id="gameArea">
+      <div id="score">Pontuação: 0</div>
+      <div id="player">🌐</div> <!-- Representa o HTML -->
+      <div id="target">💻</div> <!-- Será trocado por linguagens -->
+    </div>
+  </main>
+  <script>
+    const player = document.getElementById("player");
+    const target = document.getElementById("target");
+    const scoreDisplay = document.getElementById("score");
+    const step = 15;
+    const area = document.getElementById("gameArea");
+
+    const languages = ["💻", "📜", "🐍", "☕", "🔧", "🧠"];
+    const languageNames = {
+      "💻": "JavaScript",
+      "📜": "TypeScript",
+      "🐍": "Python",
+      "☕": "Java",
+      "🔧": "C++",
+      "🧠": "AI/ML",
+    };
+
+    let score = 0;
+
+    document.addEventListener("keydown", function (e) {
+      let top = player.offsetTop;
+      let left = player.offsetLeft;
+
+      if (e.key === "ArrowUp" && top > 0) top -= step;
+      if (e.key === "ArrowDown" && top + player.offsetHeight < area.offsetHeight)
+        top += step;
+      if (e.key === "ArrowLeft" && left > 0) left -= step;
+      if (
+        e.key === "ArrowRight" &&
+        left + player.offsetWidth < area.offsetWidth
+      )
+        left += step;
+
+      player.style.top = top + "px";
+      player.style.left = left + "px";
+
+      checkCollision();
+    });
+
+    function checkCollision() {
+      const playerRect = player.getBoundingClientRect();
+      const targetRect = target.getBoundingClientRect();
+
+      if (
+        playerRect.left < targetRect.right &&
+        playerRect.right > targetRect.left &&
+        playerRect.top < targetRect.bottom &&
+        playerRect.bottom > targetRect.top
+      ) {
+        score++;
+        scoreDisplay.textContent = "Pontuação: " + score;
+        moveTargetRandom();
+      }
+    }
+
+    function moveTargetRandom() {
+      const maxX = area.offsetWidth - target.offsetWidth;
+      const maxY = area.offsetHeight - target.offsetHeight;
+
+      const newX = Math.floor(Math.random() * maxX);
+      const newY = Math.floor(Math.random() * maxY);
+
+      const randomIndex = Math.floor(Math.random() * languages.length);
+      target.textContent = languages[randomIndex];
+
+      target.title = languageNames[target.textContent];
+      target.style.left = newX + "px";
+      target.style.top = newY + "px";
+    }
+  </script>
 </body>
 </html>
