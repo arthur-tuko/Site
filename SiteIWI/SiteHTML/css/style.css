@@ -92,13 +92,15 @@ background-color: black;
     background: url(../img/img2/bannertabela.jpg) no-repeat center/cover;
     height: 400px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column;/
     margin-top: 90px;
     align-items: flex-start;
     justify-content: center;
     padding-left: 30px; 
+    color: #fff;
     font-size: 1.6em;
     text-align:left;
+    text-shadow: 2px 2px 5px #dfe0e5 ;
 }
 
 header .container{
