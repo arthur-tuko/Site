@@ -77,7 +77,7 @@ background-color: black;
 }
 
 .bannercontato{
-    background:url(../img/contato.png) no-repeat center/cover;
+    background:url(../img/htmlbanner.jpg) no-repeat center/cover;
     height: 400px;
     display: flex;
     flex-direction: column;
@@ -225,7 +225,7 @@ body.paginamensagem {
   
   .mensagem{
     margin-top: 10%;
-    background-color: black;
+    background-color: orange;
   }
 
 @media (max-width: 675px){
