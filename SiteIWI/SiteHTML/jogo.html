@@ -1,89 +1,84 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Html</title>
-    <link rel="shortcut icon" href="img/imagem html.png" type="image/x-icon" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      /* Reset básico */
-      body,
-      html {
-        height: 100%;
-        margin: 0;
-        display: flex;
-        justify-content: center; /* centraliza horizontal */
-        align-items: flex-start; /* alinha no topo */
-        background-color: #222; /* fundo da página */
-        font-family: Arial, sans-serif;
-        padding-top: 150px; /* espaçamento para jogar pra baixo */
-      }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Html</title>
+  <link rel="shortcut icon" href="img/imagem html.png" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    /* Reset básico */
+    body, html {
+      height: 100%;
+      margin: 0;
+      background-color: #222; /* fundo da página */
+      font-family: Arial, sans-serif;
+    }
 
-      main {
-        width: 800px; /* largura maior */
-        height: 600px; /* altura fixa */
-        background-color: #1e1e1e; /* fundo do jogo */
-        position: relative;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
-        border-radius: 10px;
-        overflow: hidden;
-      }
+    header {
+      /* mantém padrão do seu header */
+    }
 
-      #gameArea {
-        width: 100%;
-        height: 100%;
-        position: relative;
-      }
+    main.mainjogo {
+      width: 800px; /* largura maior */
+      height: 600px; /* altura fixa */
+      background-color: #1e1e1e; /* fundo do jogo */
+      position: relative;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+      border-radius: 10px;
+      overflow: hidden;
 
-      #score {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        color: white;
-        font-size: 20px;
-        z-index: 10;
-        user-select: none;
-      }
+      margin: 80px auto 0; /* distancia do topo e centraliza horizontalmente */
+    }
 
-      #player,
-      #target {
-        position: absolute;
-        width: 60px;
-        height: 60px;
-        font-size: 50px;
-        text-align: center;
-        line-height: 60px;
-        user-select: none;
-        cursor: default;
-      }
+    #gameArea {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
 
-      #player {
-        top: 100px;
-        left: 100px;
-      }
+    #score {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: white;
+      font-size: 20px;
+      z-index: 10;
+      user-select: none;
+    }
 
-      #target {
-        top: 300px;
-        left: 300px;
-      }
-    </style>
+    #player, #target {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      font-size: 50px;
+      text-align: center;
+      line-height: 60px;
+      user-select: none;
+      cursor: default;
+    }
+
+    #player {
+      top: 100px;
+      left: 100px;
+    }
+
+    #target {
+      top: 300px;
+      left: 300px;
+    }
+  </style>
 </head>
 <body>
   <header>
     <div class="container">
       <div class="Logo">
-        <a href="index.html"
-          ><img
-            class="Logo"
-            src="img/Other-html-5-icon.png"
-            alt="Logo html"
-        /></a>
+        <a href="index.html"><img class="Logo" src="img/Other-html-5-icon.png" alt="Logo html"></a>
       </div>
       <nav>
         <ul>
@@ -97,7 +92,9 @@
       </nav>
     </div>
   </header>
+
   <section id="Inicio" class="bannerjogo"></section>
+
   <main class="mainjogo">
     <div id="gameArea">
       <div id="score">Pontuação: 0</div>
@@ -105,6 +102,7 @@
       <div id="target">💻</div> <!-- Será trocado por linguagens -->
     </div>
   </main>
+
   <script>
     const player = document.getElementById("player");
     const target = document.getElementById("target");
