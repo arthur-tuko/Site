@@ -88,6 +88,18 @@ background-color: black;
     font-size: 1.6em;
     text-align:left;
 }
+.bannertabela{
+    background: url(../img/img2/bannertabela.jpg) no-repeat center/cover;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 90px;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 30px; 
+    font-size: 1.6em;
+    text-align:left;
+}
 
 header .container{
     display: flex;
